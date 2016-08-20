@@ -1,0 +1,37 @@
+# Header
+menu:
+	Home: /
+	Life: 
+		href: subentry/Life/
+		target: true
+	Open-Source: open-source/
+	Blog: blog/
+	Guestbook: guestbook/
+
+# Profile
+profile:
+	location: Shenzhen, China
+	github: suli1
+	#stackoverflow: 
+		#title: yumemor
+		#href: http://stackoverflow.com/users/5662132/yumemor
+	#organization: 组织/公司
+
+#Widget
+sidebar: true
+navfixed: true
+
+#WidgetText
+excerpt_link: Read More
+
+#Github(请务必配置github帐号)
+github:
+#popular_repos: ['hexo-theme-primer']
+  #contribute_repos: ['yumemor/1','yumemor/2']
+
+#Comments
+comments:
+	duoshuo_username: suli1
+
+#Source Code
+source_code: https://github.com/suli1/suli1.github.io

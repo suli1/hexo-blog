@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: suli's home
+title: Hexo
 subtitle:
-description: 苏力的博客
-author: Li Su
-language: zh-cn
+description:
+author: John Doe
+language:
 timezone:
 
 # URL
@@ -63,12 +63,9 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: primer
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:suli1/suli1.github.io.git
-  branch: master
-
+  type:
