@@ -13,16 +13,16 @@ profile:
 	location: Shenzhen, China
 	github: suli1
 	#stackoverflow: 
-		#title: yumemor
-		#href: http://stackoverflow.com/users/5662132/yumemor
+		#title: suli
+		#href: http://stackoverflow.com/users/5662132/xxxx
 	#organization: 组织/公司
 
 #Widget
-sidebar: true
-navfixed: true
+sidebar: false
+navfixed: false
 
 #WidgetText
-excerpt_link: Read More
+excerpt_link:
 
 #Github(请务必配置github帐号)
 github:
@@ -31,7 +31,7 @@ github:
 
 #Comments
 comments:
-	duoshuo_username: suli1
+    duoshuo_username: suli
 
 #Source Code
 source_code: https://github.com/suli1/suli1.github.io

@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: li's home
 subtitle:
-description:
-author: John Doe
-language:
+description: 苏力的博客
+author: Li Su
+language: zh-cn
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://suli1.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :2016/:08/:20/:title/
 permalink_defaults:
 
 # Directory
@@ -28,7 +28,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: primer
+theme: nexT
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
