@@ -68,4 +68,6 @@ theme: primer
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repository: https://github.com/suli1/suli.github.io
+  branch: master
