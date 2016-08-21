@@ -1,7 +1,8 @@
 ---
 title: Android开发中一些好用的工具
 date: 2016-08-20 22:31:27
-tags:
+categories: 工具
+tags: [android,tools]
 ---
 
 Android开发中一些比较实用的工具

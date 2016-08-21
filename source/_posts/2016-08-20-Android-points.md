@@ -1,8 +1,8 @@
 ---
 title: 一些Android小技巧
 date: 2016-08-20 22:30:49
-comments: true
-tags:
+categories: 编程
+tags: [Android, Programming]
 ---
 
 # 一些Android小技巧

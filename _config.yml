@@ -7,14 +7,14 @@ title: li's home
 subtitle:
 description: 苏力的博客
 author: Li Su
-language: zh-cn
+language: zh-Hans 
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://suli1.github.io
 root: /
-permalink: :2016/:08/:20/:title/
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
@@ -46,6 +46,9 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 category_map:
+    工具: tools
+    编程: programming
+    生活: life
 tag_map:
 
 # Date / Time format

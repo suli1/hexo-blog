@@ -1,5 +1,6 @@
 ---
 title: Hello World
+comments: true
 ---
 
 这是一个示例

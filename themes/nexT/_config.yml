@@ -1,7 +1,6 @@
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
-language: zh-Hans
 
 # Put your favicon.ico into `hexo-site/source/` directory.
 favicon: /favicon.ico
@@ -30,10 +29,10 @@ canonical: true
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  categories: /分类
-  about: /关于
-  archives: /归档
+  categories: /categories
+  archives: /archives
   tags: /tags
+  about: /about
   #commonweal: /404.html
 
 
