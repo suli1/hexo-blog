@@ -1,6 +1,7 @@
----
+﻿---
 title: 一些Android小技巧
-date: 2016-08-20 22:30:49
+date: 2016-08-22 22:30:49
+updated: 2016-08-23 09:30:00
 categories: 编程
 tags: [Android, Programming]
 ---
@@ -22,6 +23,7 @@ tags: [Android, Programming]
 13. [bugreport命令](#13)
 14. [ListView的滑动与点击事件冲突](#14)
 15. [Context到底是什么](#15)
+16. [禁止EditText输入](#16)
 
 
 #### 参考资料
@@ -62,21 +64,22 @@ keytool -list -v -keystore release.jks
 
 ## <h2 id = 5>5.单例模式</h2>
 最佳写法
+
 ```
+
 public class Singleton {
-        
-            private Singleton() {
-                    }
+    private Singleton() {
+    }
                         
-                            private static class SingletonLoader {
-                                        private static final Singleton INSTANCE = new Singleton();
-                                            }
+    private static class SingletonLoader {
+        private static final Singleton INSTANCE = new Singleton();
+    }
                                                 
-                                                    public static Singleton getInstance() {
-                                                                return SingletonLoader.INSTANCE;
-                                                                    }
-                                                                        
+    public static Singleton getInstance() {
+        return SingletonLoader.INSTANCE;
+    }
 }
+
 ```
 
 ## <h2 id = 6>6.多进程Application</h2>
@@ -100,35 +103,37 @@ if (!TextUtils.isEmpty(processName) && processName.equals(this.getPackageName())
 
 ```
 public static String getProcessName(Context cxt, int pid) {  
-        ActivityManager am = (ActivityManager) cxt.getSystemService(Context.ACTIVITY_SERVICE);  
-            List<RunningAppProcessInfo> runningApps = am.getRunningAppProcesses();  
-                if (runningApps == null) {  
-                            return null;  
-                                }  
-                                    for (RunningAppProcessInfo procInfo : runningApps) {  
-                                                if (procInfo.pid == pid) {  
-                                                                return procInfo.processName;  
-                                                                        }  
-                                                                            }  
-                                                                                return null;  
+    ActivityManager am = (ActivityManager) cxt.getSystemService(Context.ACTIVITY_SERVICE);  
+    List<RunningAppProcessInfo> runningApps = am.getRunningAppProcesses();  
+    if (runningApps == null) {  
+        return null;  
+    }  
+    for (RunningAppProcessInfo procInfo : runningApps) {  
+        if (procInfo.pid == pid) {  
+            return procInfo.processName;  
+        }  
+    }  
+    return null;  
 }  
-    
-    ```
-    方案2，效率更高
-    ```
-    public static String getProcessName() {
-          try {
-                  File file = new File("/proc/" + android.os.Process.myPid() + "/" + "cmdline");
-                      BufferedReader mBufferedReader = new BufferedReader(new FileReader(file));
-                          String processName = mBufferedReader.readLine().trim();
-                              mBufferedReader.close();
-                                  return processName;
-                                    } catch (Exception e) {
-                                            e.printStackTrace();
-                                                return null;
-                                                  }
+
+```
+
+
+方案2，效率更高
+```
+public static String getProcessName() {
+    try {
+        File file = new File("/proc/" + android.os.Process.myPid() + "/" + "cmdline");
+        BufferedReader mBufferedReader = new BufferedReader(new FileReader(file));
+        String processName = mBufferedReader.readLine().trim();
+        mBufferedReader.close();
+        return processName;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
     }
-    ```
+}
+```
 
 ## <h2 id = 7>7.ListView 的局部刷新</h2>
 有的列表可能notifyDataSetChanged()代价有点高，最好能局部刷新。
@@ -137,17 +142,17 @@ public static String getProcessName(Context cxt, int pid) {
 
 ```
 private void updateItem(int index) {
-        int visiblePosition = listView.getFirstVisiblePosition();
-            if (index - visiblePosition >= 0) {
-                        //得到要更新的item的view
-                                View view = listView.getChildAt(index - visiblePosition);
+    int  visiblePosition = listView.getFirstVisiblePosition();
+    if (index - visiblePosition >= 0) {
+    // 得到要更新的item的view
+    View view = listView.getChildAt(index - visiblePosition);
 
-                                        // 更新界面（示例参考）
-                                                // TextView nameView = ViewLess.$(view, R.id.name);
-                                                        // nameView.setText("update " + index);
-                                                                // 更新列表数据（示例参考）
-                                                                        // list.get(index).setName("Update " + index);
-                                                                            }
+    // 更新界面（示例参考）
+    // TextView nameView = ViewLess.$(view, R.id.name);
+    // nameView.setText("update " + index);
+    // 更新列表数据（示例参考）
+    // list.get(index).setName("Update " + index);
+    }
 }
 ```
 - 强调一下，最后那个列表数据别忘记更新， 不然数据源不变，一滚动可能又还原了。
@@ -234,59 +239,65 @@ adb bugreport > main.log
 ```
 ### <h2 id = 14>14.ListView的滑动与点击事件冲突</h2>
 [ListView事件冲突解决](http://blog.csdn.net/singwhatiwanna/article/details/8863232)
+
 ```
 public class NestedHorizontalListView extends HorizontalListView {
-        private final static int TOUCH_STATE_REST = 0;
-            private final static int TOUCH_STATE_SCROLLING = 1;
-                private final static int TOUCH_SLOP = 10;
+    private final static int TOUCH_STATE_REST = 0;
+    private final static int TOUCH_STATE_SCROLLING = 1;
+    private final static int TOUCH_SLOP = 10;
 
-                    private int mTouchState;
-                        private float mLastMotionX;
+    private int mTouchState;
+    private float mLastMotionX;
 
-                            public NestedHorizontalListView(Context context, AttributeSet attrs) {
-                                        super(context, attrs);
-                                            }
+    public NestedHorizontalListView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
 
-                                                @Override
-                                                    public boolean onInterceptTouchEvent(MotionEvent ev) {
-                                                        //        return super.onInterceptTouchEvent(ev);
-                                                                final int action = ev.getAction();
-                                                                        if ((action == MotionEvent.ACTION_MOVE) && (mTouchState != TOUCH_STATE_REST)) {
-                                                                                        return true;
-                                                                                                }
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//      return super.onInterceptTouchEvent(ev);
 
-                                                                                                        final float x = ev.getX();
-                                                                                                        //        final float y = ev.getY();
+        final int action = ev.getAction();
+        if ((action == MotionEvent.ACTION_MOVE) && (mTouchState != TOUCH_STATE_REST)) {
+            return true;
+        }
 
-                                                                                                                switch (action) {
-                                                                                                                                case MotionEvent.ACTION_MOVE:
-                                                                                                                                                final int xDiff = (int) Math.abs(mLastMotionX - x);
-                                                                                                                                                                if (xDiff > TOUCH_SLOP) {
-                                                                                                                                                                                        mTouchState = TOUCH_STATE_SCROLLING;
-                                                                                                                                                                                                        }
-                                                                                                                                                                                                                        break;
+    final float x = ev.getX();
+//  final float y = ev.getY();
+    switch (action) {
+        case MotionEvent.ACTION_MOVE:
+            final int xDiff = (int) Math.abs(mLastMotionX - x);
+            if (xDiff > TOUCH_SLOP) {
+                mTouchState = TOUCH_STATE_SCROLLING;
+            }
+            break;
+        case MotionEvent.ACTION_DOWN:
+            mLastMotionX = x;
+//          mLastMotionY = y;
+            mTouchState = mFlingTracker.isFinished() ? TOUCH_STATE_REST : TOUCH_STATE_SCROLLING;
+            break;
+        case MotionEvent.ACTION_CANCEL:
+        case MotionEvent.ACTION_UP:
+            mTouchState = TOUCH_STATE_REST;
+            break;
+        }
 
-                                                                                                                                                                                                                                    case MotionEvent.ACTION_DOWN:
-                                                                                                                                                                                                                                                    mLastMotionX = x;
-                                                                                                                                                                                                                                                    //                mLastMotionY = y;
-                                                                                                                                                                                                                                                                    mTouchState = mFlingTracker.isFinished() ? TOUCH_STATE_REST : TOUCH_STATE_SCROLLING;
-                                                                                                                                                                                                                                                                                    break;
-
-                                                                                                                                                                                                                                                                                                case MotionEvent.ACTION_CANCEL:
-                                                                                                                                                                                                                                                                                                            case MotionEvent.ACTION_UP:
-                                                                                                                                                                                                                                                                                                                            mTouchState = TOUCH_STATE_REST;
-                                                                                                                                                                                                                                                                                                                                            break;
-                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                            return mTouchState != TOUCH_STATE_REST;
-                                                                                                                                                                                                                                                                                                                                                                }
+        return mTouchState != TOUCH_STATE_REST;
+    }
 }
 
 ```
 ### <h2 id = 15>15.Context到底是什么</h2>
 [Context](http://www.jianshu.com/p/94e0f9ab3f1d)的中文翻译为：语境; 上下文; 背景; 环境，在开发中我们经常说称之为“上下文”，那么这个“上下文”到底是指什么意思呢？在语文中，我们可以理解为语境，在程序中，我们可以理解为当前对象在程序中所处的一个环境，一个与系统交互的过程。比如微信聊天，此时的“环境”是指聊天的界面以及相关的数据请求与传输，Context在加载资源、启动Activity、获取系统服务、创建View等操作都要参与。  
 > 实现Context的子类的关系图如下  
-![实现Context的子类的关系图](http://upload-images.jianshu.io/upload_images/1187237-1b4c0cd31fd0193f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 "实现Context的子类的关系图")
+![实现Context的子类的关系图](/images/android_context.png "实现Context的子类的关系图")
 
 
+### <h2 id = 16>16.禁止EditText输入</h2>
+> void [setKeyListener](https://developer.android.com/reference/android/widget/TextView.html#setKeyListener(android.text.method.KeyListener)) (KeyListener input)  
+Sets the key listener to be used with this TextView. *This can be null to disallow user input.* Note that this method has significant and subtle interactions with soft keyboards and other input method: see KeyListener.getContentType() for important details. Calling this method will replace the current content type of the text view with the content type returned by the key listener.
+
+```
+editText.setKeyListener(null);
+```
 

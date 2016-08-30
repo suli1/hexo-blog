@@ -1,6 +1,7 @@
 ﻿---
 title: Android开发中一些好用的工具
-date: 2016-08-20 22:31:27
+date: 2016-08-21 22:31:27
+updated: 2016-08-23 09:30:00
 categories: 工具
 tags: [android,tools]
 ---
@@ -11,6 +12,7 @@ tags: [android,tools]
 | 序号 | 名称 | 说明 | 链接 |
 |-----:|:-----:|:------:|:-----|
 |1 | Emulator | android 模拟器| |
+|2 | adb | Android DebugBridge |
 
 
 
