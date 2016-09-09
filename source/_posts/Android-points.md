@@ -3,7 +3,7 @@ title: 一些Android小技巧
 date: 2016-08-22 22:30:49
 updated: 2016-08-23 09:30:00
 categories: 编程
-tags: [Android, Programming]
+tags: [android, programming]
 ---
 
 一些Android小技巧

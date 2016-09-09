@@ -1,7 +1,7 @@
 ---
 title: View的绘制流程和事件传递
 date: 2016-08-06 14:28:20
-tags:
+tags: [android, 基础原理]
 ---
 
 [View](https://developer.android.com/reference/android/view/View.html)在Android中代表了基础的UI构建组件，一个View在屏幕上占有一个矩形的显示区域，负责图形的绘制和事件的处理。

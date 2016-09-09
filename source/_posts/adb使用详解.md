@@ -1,7 +1,7 @@
 ---
 title: adb使用详解
 date: 2016-07-22 18:19:26
-tags:
+tags: [android, tools]
 ---
 
 
