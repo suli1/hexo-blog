@@ -2,8 +2,36 @@
 title: android的高质量文章分类与汇总(不定期更新)
 date: 2016-09-11 16:48:29
 updated: 2016-09-12 16:48:29
-tags:
+tags: [android]
 ---
+
+# 一些很好的技术网站和博客
+[github](https://github.com)
+[android developer](https://developer.android.com)
+[stackoverflow](http://stackoverflow.com/)
+
+[grepcode](http:///grepcode.com):一个很好的搜索查看源码的网站,包括JDK,android
+[android-arsenal](https://android-arsenal.com/):android工具，库，开源app的汇总
+[Android开源项目汇总](https://github.com/Trinea/android-open-project):国内最强的开源项目收集
+[codeKK](http://www.codekk.com/open-source-project-analysis):开源项目源码分析的网站
+
+[android weekly](http://androidweekly.net/):每周一必读的android开发周报
+[干货集中营](http://gank.io):国内的android，iOS等技术日报，一周到周五每天都有
+
+其他的一些高质量社区,里面的技术比较全面
+[diycode](http://www.diycode.cc/)
+[掘金](http://gold.xitu.io/):有app的
+
+
+
+
+# Java
+[Java工程师的成神之路](http://www.hollischuang.com/archives/489)
+隔一段时间可以按这个路数撸一撸，查漏补缺...
+
+
+# android
+[Best Android Gists](https://github.com/lopspower/BestAndroidGists)
 
 # 自定义控件
 
