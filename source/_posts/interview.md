@@ -119,11 +119,11 @@ public static void shellSort(int[] data) {
 /**
  * 快速排序
  */
-    public static void quickSort(int[] data) {
-        if (data.length > 0) {
-            _quickSort(data, 0, data.length - 1);
-        }
-    }
+public static void quickSort(int[] data) {
+   if (data.length > 0) {
+       _quickSort(data, 0, data.length - 1);
+   }
+}
 
 private static int getMiddle(int[] data, int low, int high) {
     int tmp = data[low]; // 数组的第一个作为中轴
@@ -242,6 +242,17 @@ $./gradlew assembleProductionDebug
 ```
 3.添加gradle代码，忽略当前不需要执行的单元测试
 
+## ListView的优化
+1.重用convertView,通过复用convertView来减少不必要的view创建,inflate操作也比较耗时
+2.使用ViewHolder减少findViewById()操作
+3.避免在getView方法中做耗时的操作,异步加载图片等资源
+4.优化item的布局,如减少布局层次,防止过渡重绘
+5.尽量保证Adapter.hasStableIds()返回true,这样在notifyDataSetChanged()的时候,如果item内容没有变化,ListView讲不会重绘这个View
+6.对ScrollView于嵌套的ListView,可以把ListView的高度写死
+7.使用RecyclerView替代ListView:每个item内容的变动，ListView都需要去调用notifyDataSetChanged来更新全部的item，太浪费性能了。RecyclerView可以实现单个item的局部刷新，并且引入了增加和删除的动态效果，在性能上和定制上都有很大的改善
+8.ListView中元素避免半透明,或在滚动是取消半透明的效果
+9.尽量开启硬件加速,提升性能
+
 
 ## 官方性能优化的文章
 
@@ -299,9 +310,5 @@ $./gradlew assembleProductionDebug
 热修复, 插件化, 换肤 
 
 
-
-- <input type="checkbox" onclick="return false;" checked/> View的事件体系与工作原理
-- <input type="checkbox" onclick="return false;" checked/> Android的消息机制
-- <input type="checkbox" onclick="return false;" checked/> android architecture
 
 

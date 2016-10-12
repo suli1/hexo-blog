@@ -50,4 +50,6 @@ demo: https://github.com/ragnraok/AllocRecordDemo
 1.[git教程](https://www.gitbook.com/book/lvwzhen/git-tutorial)
 深入浅出的git教程,基本1,2个小时看完,并照着例子敲一下就OK了,你应该知道的git的几个重要概念,如工作区(Working Directory), 版本库(Reponsitory),暂存区(stage),master,HEAD,stash, 以及常用的提交,版本回退,分支管理,标签管理的相关操作.
 
+2.[MAT-Memory Analyzer Tool使用进阶](http://www.lightskystreet.com/2015/09/01/mat_usage/)
+
 

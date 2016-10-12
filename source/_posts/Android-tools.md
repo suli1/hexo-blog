@@ -29,3 +29,7 @@ tags: [android,tools]
 ## 7.APK检测分析
 [NimbleDroid](https://nimbledroid.com)
 一直以来为用户提供app的运行和响应速度的详细数据分析，但在与用户的交谈N之中我们发现其实我们在帮助开发者了解他们开发的app内部工作原理上还可以做的更多。而这些原理却是真正影响着app在一个相对更老款或者性能更弱的移动设备上的表现。
+
+
+## 8.[pngcheck](http://www.libpng.org/pub/png/apps/pngcheck.html)
+有时候出现资源文件以png为后缀,但不是png文件的情况,编译时会报错,使用这个命令可以快速的找出不是png的文件啦,再把它转换为png就好了.
