@@ -9,6 +9,7 @@ tags: [android]
 [github](https://github.com)
 [android developer](https://developer.android.com)
 [stackoverflow](http://stackoverflow.com/)
+[java papers](http://javapapers.com/):包括Java,Android,设计模式,Java Web相关技术
 
 [grepcode](http:///grepcode.com):一个很好的搜索查看源码的网站,包括JDK,android
 [android-arsenal](https://android-arsenal.com/):android工具，库，开源app的汇总
