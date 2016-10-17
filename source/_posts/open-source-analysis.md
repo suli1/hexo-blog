@@ -5,7 +5,8 @@ tags:
 ---
 
 # retrofit2
-[深入浅出 Retrofit](http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=1117&extra=page%3D2)
+[深入浅出 Retrofit](http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=1117&extra=page%3D2)  
+[拆轮子系列:Retrofit](http://blog.piasy.com/2016/06/25/Understand-Retrofit/)
 
 
 # OKHttp
