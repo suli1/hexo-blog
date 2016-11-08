@@ -34,3 +34,7 @@ tags: [android,tools]
 
 ## 8.[pngcheck](http://www.libpng.org/pub/png/apps/pngcheck.html)
 有时候出现资源文件以png为后缀,但不是png文件的情况,编译时会报错,使用这个命令可以快速的找出不是png的文件啦,再把它转换为png就好了.
+
+## 9.[TinyDancer](https://github.com/friendlyrobotnyc/TinyDancer)
+一个实现的计算FPS的工具库,可以帮助你检测和优化试图的绘制.
+
