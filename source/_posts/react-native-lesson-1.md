@@ -23,3 +23,11 @@ tags: [programming]
 # 基础知识
 * [JavaScript 高级教程 w3school](http://www.w3school.com.cn/js/index_pro.asp)
 
+
+# JavaScript
+* 原型方式创建对象
+* 使用对象冒充实现多重继承 
+
+
+
+

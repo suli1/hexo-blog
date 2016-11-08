@@ -23,6 +23,7 @@ tags: [android,tools]
 ## 4.HTML ISO-8859-1 参考手册(strings.xml)
 
 ## 5.gradle build
+[Gradle:从入门到放弃](https://levent-j.github.io/android/2016/09/28/gradle(2)#0x04-task详解)
 
 ## 6.混淆打包proguard
 
