@@ -38,3 +38,6 @@ tags: [android,tools]
 ## 9.[TinyDancer](https://github.com/friendlyrobotnyc/TinyDancer)
 一个实现的计算FPS的工具库,可以帮助你检测和优化试图的绘制.
 
+> 参考资料  
+* [Android studio tips](https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2#.9mb8bf4cf)
+
