@@ -38,6 +38,19 @@ tags: [android,tools]
 ## 9.[TinyDancer](https://github.com/friendlyrobotnyc/TinyDancer)
 一个实现的计算FPS的工具库,可以帮助你检测和优化试图的绘制.
 
-> 参考资料  
-* [Android studio tips](https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2#.9mb8bf4cf)
+## 10.Lifecycler Sorter
+可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序，快捷键Ctrl + alt + K
 
+## 11.CodeGlance
+在右边可以预览代码，实现快速定位
+
+## 12.findbugs-IDEA
+查找bug的插件，Android Studio也提供了代码审查的功能（Analyze-Inspect Code…）
+
+## 13.[dagger-intellij-plugin](https://github.com/square/dagger-intellij-plugin)
+Dagger可视化辅助工具
+
+> 参考资料  
+* [Android studio tips](https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2#.9mb8bf4cf)  
+
+* [Android studio 插件整理](http://blog.csdn.net/liang5630/article/details/51867553)  
