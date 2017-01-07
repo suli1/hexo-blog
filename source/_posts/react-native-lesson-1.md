@@ -12,7 +12,7 @@ tags: [programming]
 使用[flow](https://flowtype.org)检查JavaScript代码
 使用[babeljs](https://babeljs.io)在命令行下编译运行js代码
 
-* [Visual Studio Code](https://code.visualstudio.com):
+* [Visual Studio Code](https://code.visualstudio.com): [环境配置](http://godcoder.me/2016/09/26/VS_Code/)
 * WebStorm:需要收费
 
 
